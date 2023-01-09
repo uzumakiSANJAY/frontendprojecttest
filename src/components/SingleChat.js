@@ -125,7 +125,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
     socket.on("Message Recieved", (newMessageRecieved) => {
       if (
         !selectedChatCompare || // if chat is not selected or doesn't match current chat
-        selectedChatCompare._id !== newMessageRecieved.chat._id
+        selectedChatCompare._id !== newMessageRecieved.chat.message._id
       ) {
         if (!notification.includes(newMessageRecieved)) {
           setNotification([newMessageRecieved, ...notification]);
